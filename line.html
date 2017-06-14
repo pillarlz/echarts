@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>bar</title>
+		<script src="js/echarts.min.js"></script>
+	</head>
+	<body>
+		<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+		<div id="main" style="width: 900px;height: 600px;"></div>
+		<script type="text/javascript">
+			 
+			var myChart=echarts.init(document.getElementById("main"));
+			
+			//指定图表的配置项和数据
+			var opition={
+				//标题
+				title:{
+					text:"Echarts 入门示例"
+				},
+				//工具箱
+				toolbox:{
+					show:true,
+					feature:{
+						saveASImage:{
+							show:true
+						}
+					}
+				},
+				legend:{
+					data:["销量"]
+				},
+				xAxis:{
+					data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+				},
+				yAxis:{},
+				series:[{
+					name:'销量',
+					type:'bar',                 //柱状图
+					data:[5,20,36,10,10,20]
+				},{
+					name:"产量",
+					type:"line",                //折线图
+					data:[7,30,50,11,40,80]
+				}]
+			};
+			myChart.setOption(opition);
+		</script>
+	</body>
+</html>
